@@ -2,21 +2,21 @@ import './App.css';
 import {BrowserRouter, Route, Routes} from  'react-router-dom';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+import DefaultLayout from './components/default/DefaultLayout';
+import DefaultCleanLayout from './components/default/DefaultCleanLayout';
 
 
 function App() {
   return (
    <>
-    <Header/>
+    {/* <Header/> */}
       <BrowserRouter>
         <Routes>
-            <Route path='/' Component={Home}/>
-            <Route path='/login' Component={Login} />
+            <Route path='/' Element={<DefaultLayout> <Home></Home></DefaultLayout>}/>
+            <Route path='/login' Element={<DefaultCleanLayout><Login></Login></DefaultCleanLayout>}/>
         </Routes>
       </BrowserRouter>
-    <Footer/>
+    {/* <Footer/> */}
    </>
   );
 }
