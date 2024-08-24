@@ -13,15 +13,15 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<DefaultLayout><Home /></DefaultLayout>} />
+          <Route path="/login" element={<Login />} />
+
+
           <Route element={<PrivateRouter />}>
-            {/* Private */}
-            <Route path='/' Element={<DefaultLayout><Home /></DefaultLayout>} />
-
-            {/* Inserir todas as rotas restritas dentro da tag com o "PrivateRoute, para limitar o acesso." */}
-
-            {/* Private */}
+            <Route path="/private" element={<Home/>} />
+            {/* <Route path="/recover-password" element={<RecoverPassword />} /> */}
+            {/* <Route path="/change-password" element={<ChangePassword />} /> */}
           </Route>
-          <Route path='/login' /*Element={<DefaultCleanLayout><Login /></DefaultCleanLayout>}*/ Component={DefaultLayout(Home)} />
 
         </Routes>
       </BrowserRouter>
