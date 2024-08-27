@@ -1,0 +1,10 @@
+{
+    "Bem-vindo" : "Bem-vindo",
+    "login": "Acessar",
+    "password": "Senha",
+    "button": {
+        "login":"Acessar",
+        "save":"Salvar",
+        "remove":"Remover"
+    }
+}
