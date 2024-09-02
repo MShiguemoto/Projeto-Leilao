@@ -52,12 +52,12 @@ class ProfilePerson {
 /' Person "1" -- "0..*" ProfilePerson : associated with
 Profile "1" -- "0..*" ProfilePerson : associated with '/
 Person "0..*" <-> "1..*" Profile
-(Person, Profile) .. ProfilePerson : associated with
-Category "1" <-- "0..*" Auction : belongs to
-Person "1" <-- "0..*" Auction : creates
-Auction "1" <--> "0..*" Image : has
-Auction "1" <--> "0..*" Bid : receives
-Person "1" <-- "0..*" Bid : places
-Person "1" <-- "0..*" Feedback : gives
-Person "1" <-- "0..*" Category : owns
+(Person, Profile) .. ProfilePerson : associated class
+Category "1" <-- "0..*" Auction
+Person "1" <-- "0..*" Auction
+Auction "1" <--> "0..*" Image
+Auction "1" <--> "0..*" Bid
+Person "1" <-- "0..*" Bid
+Person "1" <-- "0..*" Feedback
+Person "1" <-- "0..*" Category
 @enduml
