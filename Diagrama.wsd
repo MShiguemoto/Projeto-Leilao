@@ -5,7 +5,7 @@ class Person {
     - password: String
     - validationCode: String
     - validationCodeValidity: Date
-    - pictureProfile: byte
+    - pictureProfile: byte[]
 }
 
 class Profile {
