@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Entity
@@ -17,6 +18,13 @@ public class Profile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @NotBlank(message= "{name.required}")
     private String name;
+
+    @Column(name = "CPF")
+    @NotBlank(message = "{cpf.required}")
+    private String cpf;
+
+    @NotBlank
+    private String email;
 }

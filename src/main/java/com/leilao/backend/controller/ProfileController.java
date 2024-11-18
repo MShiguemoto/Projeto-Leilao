@@ -3,11 +3,13 @@ package com.leilao.backend.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import com.leilao.backend.model.Profile;
 import com.leilao.backend.service.ProfileService;
 
+import jakarta.mail.MessagingException;
 import jakarta.websocket.server.PathParam;
 
 @RestController
@@ -18,12 +20,12 @@ public class ProfileController {
     private ProfileService profileService;
 
     @PostMapping
-    public Profile create(@RequestBody Profile profile) {
+    public Profile create(@Validated @RequestBody Profile profile) throws MessagingException {
         return profileService.create(profile);
     }
 
     @PutMapping
-    public Profile update(@RequestBody Profile profile) {
+    public Profile update(@Validated @RequestBody Profile profile) throws MessagingException {
         return profileService.create(profile);
     }
 
